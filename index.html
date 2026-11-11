@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>スタンプメーカー</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#06C755">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>スタンプメーカー</h1></header>
+<main>
+  <section class="panel">
+    <label class="btn">画像を追加
+      <input type="file" id="fileInput" accept="image/*" multiple hidden>
+    </label>
+    <ul id="list"></ul>
+  </section>
+
+  <section class="panel editor">
+    <div class="canvasWrap"><canvas id="view" width="370" height="320"></canvas></div>
+    <p class="hint" id="hint">画像をドラッグで位置調整。文字をドラッグで移動。</p>
+
+    <div class="row">
+      <label>拡大<input type="range" id="scale" min="0.5" max="4" step="0.01" value="1"></label>
+    </div>
+
+    <fieldset>
+      <legend>背景の透過</legend>
+      <label><input type="checkbox" id="removeBg"> 背景を透過する</label>
+      <div class="row"><label>許容範囲<input type="range" id="tol" min="0" max="150" value="30"></label></div>
+      <div class="row">
+        <button id="pickBtn" type="button">画像から背景色を選ぶ</button>
+        <span id="swatch" class="swatch"></span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>テキスト</legend>
+      <input type="text" id="text" placeholder="文字を入力" maxlength="30">
+      <div class="row">
+        <label>サイズ<input type="range" id="textSize" min="12" max="80" value="36"></label>
+        <input type="color" id="textColor" value="#000000">
+      </div>
+    </fieldset>
+
+    <div class="row buttons">
+      <button id="savePng" type="button">このスタンプをPNG保存</button>
+      <button id="saveZip" type="button">全部ZIPで保存</button>
+      <button id="previewBtn" type="button">プレビュー・簡易チェック</button>
+      <button id="delBtn" type="button" class="danger">削除</button>
+    </div>
+  </section>
+
+  <section id="preview" class="panel" hidden>
+    <h2>プレビュー・簡易チェック</h2>
+    <div id="grid"></div>
+    <ul id="checks"></ul>
+    <p class="hint">※審査基準は、LINE Creators Marketの最新ガイドラインでご確認ください。</p>
+    <button id="closePreview" type="button">閉じる</button>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
