@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "スタンプメーカー",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "画像の配置、背景の透過、文字入れとPNG・ZIP保存ができるスタンプ編集ツール。",
   "icons": {
     "128": "icon-192.png"
