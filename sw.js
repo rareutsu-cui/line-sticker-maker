@@ -1,12 +1,10 @@
-const CACHE = 'stamp-maker-v5';
+const CACHE = 'stamp-maker-v4';
 const SHELL = [
   './',
   './index.html',
   './style.css',
   './app.js',
-  './manifest.webmanifest',
-  './pwa.js',
-  './vendor/jszip.min.js',
+  './manifest.json',
   './icon-180.png',
   './icon-192.png',
   './icon-512.png'
