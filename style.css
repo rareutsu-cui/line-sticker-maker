@@ -1,3 +1,4 @@
+[hidden] { display: none !important; }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html { -webkit-text-size-adjust: 100%; }
 body {
@@ -23,7 +24,6 @@ main {
   background: #fff8d6; color: #5a4a00; font-size: 14px;
   padding: 10px 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 }
-.banner[hidden] { display: none; }
 .banner button { background: #8a7400; }
 
 .panel { background: #fff; border-radius: 12px; padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
