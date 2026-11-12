@@ -327,8 +327,8 @@ function runChecks() {
     { ok: title.length > 0, t: 'タイトルが入力されている' },
     { ok: desc.length > 0, t: '説明が入力されている' },
     { ok: outside.length === 0, t: outside.length ? `文字が余白の外にあります: ${outside.join(', ')}番` : '文字が余白の内側に収まっている' },
-    { warn: long.length > 0, t: long.length ? `6文字を超える文字があります(推奨4〜6文字): ${long.join(', ')}番` : '文字数は推奨範囲内' },
-    { warn: edge.length > 0, t: edge.length ? `画像の周囲10pxに絵が入っています: ${edge.join(', ')}番` : '画像の周囲に余白がある' }
+    { ok: long.length === 0, warn: long.length > 0, t: long.length ? `6文字を超える文字があります(推奨4〜6文字): ${long.join(', ')}番` : '文字数は推奨範囲内' },
+    { ok: edge.length === 0, warn: edge.length > 0, t: edge.length ? `画像の周囲10pxに絵が入っています: ${edge.join(', ')}番` : '画像の周囲に余白がある' }
   ];
 }
 

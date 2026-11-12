@@ -1,4 +1,4 @@
-const CACHE = 'stamp-maker-v4';
+const CACHE = 'stamp-maker-v5';
 const SHELL = [
   './',
   './index.html',
